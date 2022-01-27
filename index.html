@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/main.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <title>Tip Calculator App</title>
+
+</head>
+<body>
+    <header class="header">
+      <img src="./images/logo.svg" alt="splitter logo" class="header__img">
+    </header>
+  
+  
+    <main class="main">
+  
+      <!-- Bill Inputs -->
+      <form class="main__bill">
+        <h1 class="main__bill__header">Bill</h1>
+        <input type="number" id="bill" class="main__bill__input" value="100" >
+      </form>
+  
+      <!-- Tip Inputs -->
+      <form class="main__tip" name="tipform" id='tipform'>
+        
+        <p class="main__tip__header">Select Tip %</p>
+  
+        <input type="radio" name="tip" id="tip5" value=5 onchange="checkTipRadio()" checked>
+        <label for="tip5" class="main__tip__input">5%</label>
+  
+        <input type="radio" name="tip" id="tip10" value=10 onchange="checkTipRadio()" >
+        <label for="tip10" class="main__tip__input">10%</label>
+  
+        <input type="radio" name="tip" id="tip15" value=15 onchange="checkTipRadio()">
+        <label for="tip15" class="main__tip__input">15%</label>
+  
+        <input type="radio" name="tip" id="tip25" value=25 onchange="checkTipRadio()">
+        <label for="tip25" class="main__tip__input">25%</label>
+  
+        <input type="radio" name="tip" id="tip50" value=50 onchange="checkTipRadio()">
+        <label for="tip50" class="main__tip__input">50%</label>
+  
+        <input type="number" name="tip" id="tip-custom" placeholder="Custom" onkeyup="checkCustomTip()" class="main__tip__input">
+        <!-- <label for="tip-custom" class="main__tip__input">Custom</label> -->
+        
+      </form>
+  
+      <!-- People Inputs -->
+      <form class="main__people">
+        <h1 class="main__people__header">Number of People</h1>
+        <input type="number" class="main__people__input" id='people'value=1>
+      </form>
+  
+      <!-- Results -->
+      <div class="main__results">
+        <p class="main__results__amount">Tip Amount<span class="accent">/ person</span></p>
+        <p class="main__results__amount-number" id='tip-amount'>$0</p>
+  
+        <p class="main__results__amount">Total<span class="accent">/ person</span></p>
+        <p class="main__results__amount-number" id='total-amount'>$0</p>
+  
+        <button class="main__results__btn" id="reset">RESET</button>
+      </div>
+  
+    </main>
+
+
+  
+
+
+<!--   
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+body {
+    font-family: var(--ff);
+}
+
+.main {
+    &__bill {
+        border: none;
+        color: var(--dark-grayish-cyan);
+    
+        &__header {
+          font-size: 1rem;
+        }
+
+        &__input {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--very-dark-cyan);
+        }
+    }
+
+    &__tip {
+
+        &__header {
+            color: var(--dark-grayish-cyan);
+            font-weight: 700;
+        }
+
+        &__input {
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+    }
+
+    &__people {
+
+        &__header {
+            color: var(--dark-grayish-cyan);
+            font-weight: 700;
+            font-size: 1rem;
+
+        }
+
+        &__input {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--very-dark-cyan);
+        }
+    }
+
+    &__results {
+        color: var(--white);
+        font-weight: 700;
+
+        &__amount-number {
+            color: var(--strong-cyan);
+            font-size: 1.7rem;
+        }
+
+        .accent {
+            color: var(--dark-grayish-cyan2);
+            font-size: .8rem;
+        }
+
+        &__btn {
+            color: var(--very-dark-cyan);
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+@media (min-width: 1000px) {
+    .main {
+        &__results {
+            &__amount-number {
+                font-size: 2.7rem;
+              }
+        }
+    }
+}

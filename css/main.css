@@ -1,0 +1,328 @@
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --dark-grayish-cyan2: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --light-grayish-cyan2: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+  --ff: "Space Mono", monospace;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.6;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font-family: var(--ff);
+}
+
+.main__bill {
+  border: none;
+  color: var(--dark-grayish-cyan);
+}
+.main__bill__header {
+  font-size: 1rem;
+}
+.main__bill__input {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--very-dark-cyan);
+}
+.main__tip__header {
+  color: var(--dark-grayish-cyan);
+  font-weight: 700;
+}
+.main__tip__input {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.main__people__header {
+  color: var(--dark-grayish-cyan);
+  font-weight: 700;
+  font-size: 1rem;
+}
+.main__people__input {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--very-dark-cyan);
+}
+.main__results {
+  color: var(--white);
+  font-weight: 700;
+}
+.main__results__amount-number {
+  color: var(--strong-cyan);
+  font-size: 1.7rem;
+}
+.main__results .accent {
+  color: var(--dark-grayish-cyan2);
+  font-size: 0.8rem;
+}
+.main__results__btn {
+  color: var(--very-dark-cyan);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 1000px) {
+  .main__results__amount-number {
+    font-size: 2.7rem;
+  }
+}
+body {
+  padding: 2rem 0;
+  background-color: var(--light-grayish-cyan);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__img {
+  margin: 0 auto;
+}
+
+/***** Main Card *****/
+.main {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: var(--white);
+  margin-top: 3rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  /***** Bill Input *****/
+  /***** Tip Inputs *****/
+  /***** People Input *****/
+  /***** Results *****/
+}
+.main__bill__input {
+  border: none;
+  width: 100%;
+  padding: 0.5rem 0;
+  border-radius: 0.3rem;
+  text-align: right;
+  background-color: var(--light-grayish-cyan2);
+  cursor: pointer;
+  padding-right: 0.5rem;
+  background-image: url(/images/icon-dollar.svg);
+  background-repeat: no-repeat;
+  background-position: 15px 50%;
+}
+.main__bill__input:hover {
+  outline: 2px solid var(--strong-cyan);
+}
+.main__tip {
+  border: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.main__tip input[type=radio] {
+  display: none;
+}
+.main__tip__header {
+  grid-column: span 2;
+}
+.main__tip__input {
+  border-radius: 0.4rem;
+  padding: 0.3rem 0rem;
+  background-color: var(--very-dark-cyan);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+.main__tip .active {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+.main__tip__input:hover {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+.main__tip__input:last-child {
+  background-color: var(--light-grayish-cyan2);
+  color: var(--very-dark-cyan);
+  border: none;
+}
+.main__tip__input:last-child:hover {
+  outline: 2px solid var(--strong-cyan);
+}
+.main__tip__input:last-child::placeholder {
+  color: var(--very-dark-cyan);
+}
+.main__people {
+  border: none;
+  margin-top: 2rem;
+}
+.main__people__header {
+  border: none;
+}
+.main__people__input {
+  border: none;
+  width: 100%;
+  padding: 0.5rem 0;
+  border-radius: 0.3rem;
+  text-align: right;
+  background-color: var(--light-grayish-cyan2);
+  cursor: pointer;
+  padding-right: 0.5rem;
+  background-image: url(/images/icon-person.svg);
+  background-repeat: no-repeat;
+  background-position: 15px 50%;
+}
+.main__people__input:hover, .main__people__input:focus {
+  outline: 2px solid var(--strong-cyan);
+}
+.main__results {
+  background-color: var(--very-dark-cyan);
+  padding: 2rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  border-radius: 0.8rem;
+  margin-top: 2rem;
+}
+.main__results__amount {
+  display: flex;
+  flex-direction: column;
+}
+.main__results__amount-number {
+  margin-left: auto;
+}
+.main__results__btn {
+  margin-top: 1rem;
+  grid-column: span 2;
+  padding: 0.6rem 0;
+  border-radius: 0.4rem;
+  border: none;
+  background-color: var(--strong-cyan);
+  cursor: pointer;
+}
+.main__results__btn:hover, .main__results__btn:focus {
+  background-color: var(--light-grayish-cyan);
+}
+
+/***** Media queries *****/
+@media (min-width: 1000px) {
+  .header {
+    position: absolute;
+    top: 10%;
+  }
+
+  .main {
+    max-width: 900px;
+    max-height: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  .main__bill {
+    grid-column: 1/2;
+    grid-row: span 1;
+  }
+  .main__bill__header {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .main__tip {
+    grid-column: 1/2;
+    grid-row: span 1;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .main__tip__header {
+    grid-column: span 3;
+  }
+  .main__people {
+    grid-column: 1/2;
+    grid-row: span 1;
+    margin: 0;
+  }
+  .main__results {
+    margin: 0;
+    padding: 2.5rem;
+    grid-column: 2/3;
+    grid-row: 1/-1;
+    align-items: center;
+  }
+  .main__results__btn {
+    align-self: flex-end;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,240 @@
+body {
+  padding: 2rem 0;
+  background-color: var(--light-grayish-cyan);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  &__img {
+    margin: 0 auto;
+  }
+}
+
+/***** Main Card *****/
+.main {
+
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: var(--white);
+  margin-top: 3rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+
+  /***** Bill Input *****/
+  &__bill {
+    &__input {
+      border: none;
+      width: 100%;
+      padding: .5rem 0;
+      border-radius: .3rem;
+      text-align: right;
+      background-color: var(--light-grayish-cyan2);
+      cursor: pointer;
+      padding-right: .5rem;
+      background-image: url(/images/icon-dollar.svg);
+      background-repeat: no-repeat;
+      background-position: 15px 50%;
+      
+    }
+
+    // &__input::before {
+    //   content: '';
+    //   background-image: url(/images/icon-dollar.svg);
+    //   background-position: center;
+    //   background-size: cover;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 15px;
+    //   height: 17px;
+    //   color: red;
+    //   z-index: 2;
+
+    // }
+
+    &__input:hover {
+      outline: 2px solid var(--strong-cyan);
+    }
+  }  
+
+  /***** Tip Inputs *****/  
+  &__tip {
+    
+    input[type="radio"] {
+      display: none;
+    }
+
+    border: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+
+    &__header {          
+      grid-column: span 2;
+    }
+
+    &__input {
+      border-radius: .4rem;
+      padding: .3rem 0rem;
+      background-color: var(--very-dark-cyan);
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .active {
+      background-color: var(--strong-cyan);
+      color: var(--very-dark-cyan)
+    }
+    
+    &__input:hover {
+      background-color: var(--strong-cyan);
+      color: var(--very-dark-cyan);
+    }
+    
+    &__input:last-child {
+      background-color: var(--light-grayish-cyan2);
+      color: var(--very-dark-cyan);
+      border: none;
+    }
+
+    &__input:last-child:hover {
+      outline: 2px solid var(--strong-cyan);
+    }
+
+    &__input:last-child::placeholder {
+      color: var(--very-dark-cyan);
+    }
+  }
+
+  /***** People Input *****/
+  &__people {
+
+    border: none;
+    margin-top: 2rem;
+    
+    &__header {
+      border: none;
+    }
+
+    &__input {
+      border: none;
+      width: 100%;
+      padding: .5rem 0;
+      border-radius: .3rem;
+      text-align: right;
+      background-color: var(--light-grayish-cyan2);
+      cursor: pointer;
+      padding-right: .5rem;
+
+      background-image: url(/images/icon-person.svg);
+      background-repeat: no-repeat;
+      background-position: 15px 50%;
+    }
+
+    &__input:hover,
+    &__input:focus {
+      outline: 2px solid var(--strong-cyan);
+    }
+  }
+
+  /***** Results *****/
+  &__results {
+    background-color: var(--very-dark-cyan);
+    padding: 2rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    border-radius: .8rem;
+    margin-top: 2rem;
+
+    &__amount {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__amount-number {
+      margin-left: auto;
+    }
+
+    &__btn {
+      margin-top: 1rem;
+      grid-column: span 2;
+      padding: .6rem 0;
+      border-radius: .4rem;
+      border: none;
+      background-color: var(--strong-cyan);
+      cursor: pointer;
+    }
+
+    &__btn:hover,
+    &__btn:focus {
+      background-color: var(--light-grayish-cyan);
+    }
+  }
+}
+
+/***** Media queries *****/
+@media (min-width: 1000px) {
+
+  .header {
+    position: absolute;
+    top: 10%;
+  }
+
+  .main {
+    max-width: 900px;
+    max-height: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+
+    &__bill {
+      grid-column: 1/2;
+      grid-row: span 1;
+
+      &__header {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__tip {
+      grid-column: 1/2;
+      grid-row: span 1;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      &__header {
+        grid-column: span 3;
+      }
+    }
+
+    &__people {
+      grid-column: 1/2;
+      grid-row: span 1;
+      margin: 0;
+    }
+
+    &__results {
+      margin: 0;
+      padding: 2.5rem;
+      grid-column: 2/3;
+      grid-row: 1/-1;
+
+      align-items: center;
+
+
+
+      &__btn {
+        align-self: flex-end;
+      }
+    }
+  }
+}
