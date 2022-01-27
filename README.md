@@ -18,7 +18,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Link]()
+- Live Site URL: [Link](https://emiacerbi.github.io/tip-calculator-app/)
 
 ## My process
 
