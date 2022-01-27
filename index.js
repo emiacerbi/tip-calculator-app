@@ -34,8 +34,6 @@ const checkTipRadio = () => {
 
 const checkCustomTip = ()  => {
     removeEffect()
-    console.log(customTip.value)
-
     return customTip.value
 }
 
@@ -45,18 +43,31 @@ customTip.addEventListener('click', () => {
     }
 })
 
+
 const checkPeople = () => {
-    return people.value
+    return people.value 
 }
 
-// const checkPeople = () => {
-//     !people.value ? 
-// }
+const checkError = () => {
+    if(people.value <= '0') {
+        document.querySelector('.main__people__header__error').style.opacity = 1 
+        people.classList.add('error')
+    } else {
+        document.querySelector('.main__people__header__error').style.opacity = 0
+        people.classList.remove('error')
+    }
+}
 
 const getTotal = () => {
     let billRes = Number(checkBill())
     let tipRes = Number(checkTipRadio() ? checkTipRadio() : checkCustomTip())*0.01
     let peopleRes = Number(checkPeople()) 
+
+    if(peopleRes <= 0) {
+        totalAmount.innerText = '$0'
+        return
+    }
+
     totalAmount.innerText = `$${(( billRes + (billRes*tipRes) ) / peopleRes).toFixed(2)}`
 }
 
@@ -64,7 +75,15 @@ const getTip = () => {
     let billRes = Number(checkBill())
     let tipRes = Number(checkTipRadio() ? checkTipRadio() : checkCustomTip())*0.01
     let peopleRes = Number(checkPeople()) 
-    tipAmount.innerText = `$${(( billRes*tipRes) / peopleRes).toFixed(2)}`
+
+    if(peopleRes <= 0) {
+        tipAmount.innerText = '$0'
+        return
+    }
+
+    let result = `$${(( billRes*tipRes) / peopleRes).toFixed(2)}`
+    tipAmount.innerText = result
+
 }
 
 const reset = () => {
@@ -74,14 +93,19 @@ const reset = () => {
 
 resetBtn.addEventListener('click', reset)
 
+people.addEventListener('click', checkError)
+
 window.addEventListener('click', () => {
     getTip()
     getTotal()
+    checkError()
 })
 
 window.addEventListener('input', () => {
     getTip()
     getTotal()
+    checkError()
 })
+
 
 
