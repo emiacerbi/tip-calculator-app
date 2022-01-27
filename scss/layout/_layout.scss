@@ -107,6 +107,7 @@ body {
     }
 
     &__input {
+      margin-top: .5rem;
       border: none;
       width: 100%;
       padding: .5rem 0;
@@ -124,6 +125,10 @@ body {
     &__input:hover,
     &__input:focus {
       outline: 2px solid var(--strong-cyan);
+    }
+
+    .error {
+      outline: 2px solid var(--red);
     }
   }
 
@@ -187,7 +192,7 @@ body {
 
       &__header {
         margin-top: 1rem;
-        margin-bottom: 1rem;
+        margin-bottom: .5rem;
       }
     }
 
@@ -199,12 +204,24 @@ body {
       &__header {
         grid-column: span 3;
       }
-    }
 
+    }
+    
     &__people {
       grid-column: 1/2;
       grid-row: span 1;
       margin: 0;
+
+      &__header {
+        
+        display: flex;
+        &__error {
+          opacity: 0;
+          margin-left: auto;
+          color: var(--red);
+        }
+
+      }
     }
 
     &__results {
@@ -214,8 +231,6 @@ body {
       grid-row: 1/-1;
 
       align-items: center;
-
-
 
       &__btn {
         align-self: flex-end;

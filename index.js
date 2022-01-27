@@ -45,9 +45,13 @@ customTip.addEventListener('click', () => {
     }
 })
 
-const checkPeople = () => {
-    return people.value
-}
+// const checkPeople = () => {
+//     return people.value
+// }
+
+// const checkPeople = () => {
+//     !people.value ? 
+// }
 
 const getTotal = () => {
     let billRes = Number(checkBill())
