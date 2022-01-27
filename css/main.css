@@ -176,7 +176,7 @@ body {
   background-color: var(--light-grayish-cyan2);
   cursor: pointer;
   padding-right: 0.5rem;
-  background-image: url(/images/icon-dollar.svg);
+  background-image: url(./images/icon-dollar.svg);
   background-repeat: no-repeat;
   background-position: 15px 50%;
 }
@@ -239,7 +239,7 @@ body {
   background-color: var(--light-grayish-cyan2);
   cursor: pointer;
   padding-right: 0.5rem;
-  background-image: url(/images/icon-person.svg);
+  background-image: url(./images/icon-person.svg);
   background-repeat: no-repeat;
   background-position: 15px 50%;
 }

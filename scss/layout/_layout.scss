@@ -40,21 +40,6 @@ body {
       
     }
 
-    // &__input::before {
-    //   content: '';
-    //   background-image: url(/images/icon-dollar.svg);
-    //   background-position: center;
-    //   background-size: cover;
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   width: 15px;
-    //   height: 17px;
-    //   color: red;
-    //   z-index: 2;
-
-    // }
-
     &__input:hover {
       outline: 2px solid var(--strong-cyan);
     }
