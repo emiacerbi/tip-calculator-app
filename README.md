@@ -43,4 +43,4 @@ Users should be able to:
 
 ## Acknowledgments
 
-
+As usual, thanks to [Frontend Mentor](frontendmentor.io) for the awesome challenge to practice with!
