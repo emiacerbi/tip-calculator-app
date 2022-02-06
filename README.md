@@ -39,8 +39,6 @@ Users should be able to:
 
 `Emi Acerbi`
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
 ## Acknowledgments
 
 As usual, thanks to [Frontend Mentor](frontendmentor.io) for the awesome challenge to practice with!
